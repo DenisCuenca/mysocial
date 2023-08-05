@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+	<title>{% block title %}{% endblock %}</title>
+    <link rel="icon" href="{% static 'images/fav.png' %}" type="image/png" sizes="16x16">
+
+    <link rel="stylesheet" href="{% static 'css/main.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/color.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+</head>
+<body>
+<!--<div class="se-pre-con"></div>-->
+<div class="theme-layout">
+
+ {% include 'base/header.html' %}
+
+
+
+	<section>
+		<div class="gap2 gray-bg">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="row merged20" id="page-contents">
+							<div class="col-lg-3">
+{% include 'base/aside.html'%}
+							</div><!-- sidebar -->
+							<div class="col-lg-6">
+								<div class="central-meta">
+									<div class="new-postbox">
+										<figure>
+											<img src="{% static 'images/resources/admin2.jpg' %}" alt="">
+										</figure>
+
+										{% include 'components/new-input.html' %}
+									</div>
+								</div><!-- add post new box -->
+								<div class="loadMore">
+								{% include 'components/user-post.html' %}
+								</div>
+							</div><!-- centerl meta -->
+							<div class="col-lg-3">
+{%  include 'base/sidebar.html' %}
+							</div><!-- sidebar -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% include 'base/footer.html' %}
+</div>
+
+	<script src="{% static 'js/main.min.js' %}"></script>
+	<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
